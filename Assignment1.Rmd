@@ -1,0 +1,56 @@
+---
+title: "Assignment 1"
+author: "Josh Mondzelewski"
+date: "2023-01-10"
+output: html_document
+---
+Git and GitHub 
+ 
+What is git? - Version Control 
+Version Control - Keeps and Restores past versions of files  
+Programmers collaborating   
+Files for version control  
+plain text (.txt)  
+R scripts (.r)  
+Markdown* (.md/ .rmd)  
+text formatting language  
+.html  
+LaTex  
+Not so good files  
+.pdf  
+.mov/.vid  
+.jpeg/.png  
+Word docs  
+Git vs GitHub  
+git is version control for local computer  
+GitHub is a free website for public storage of projects  
+GitHub Repo  
+Clone to our local computer  
+When working on repository, we are just making changes  
+Adding new files  
+Alter existing files  
+Delete existing files  
+When we do this, we make snapshots of the files called commits  
+Commit(n) - snapshot of current file system  
+Commit(v) - Saving and recording your changes  
+Takes place in local repository  
+Cycle between changing and committing files until ready to push  
+Push - Transfers changes from local repo to GitHub  
+Can also pull which brings the GitHub repo to local computer  
+When cloning a commit, you create a fork that can be worked on separately  from the main branch and eventually can be scrapped or merged with the main  branch   
+  
+Workflow  
+  
+git status  
+git add -A  
+git commit -am “message”  (no rule of thumb for how often to commit. Do it for any semi major change)  
+git push  
+  
+R Project  
+  
+Divides work into multiple context  
+Each project has its own working directory  
+Has its own workspace  
+History  
+Source Documents  
+
