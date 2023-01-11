@@ -2,7 +2,10 @@
 title: "Assignment 2"
 author: "Josh Mondzelewski"
 date: "2023-01-10"
-output: html_document
+output:  
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
 ---
 1  
 ![image link](https://imageio.forbes.com/dam/imageserve/55bb87e5e4b05c2c343250ac/0x0.png?cropX1=-1&cropY1=-1&cropX2=-1&cropY2=-1&quality=75&fit=&background=000000&uri=)
