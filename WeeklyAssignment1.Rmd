@@ -1,0 +1,30 @@
+---
+title: "Weekly Assignment 1 - Guide"
+author: "Josh Mondzelewski"
+date: "2023-01-12"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+# **How To Set Up A GitHub Web Page**  
+  
+### Installing git
+
+1. 
+  
+### Create a Repository
+  
+1. To Begin start by creating a GitHub account, the GitHub home page is linked [here](https://github.com).    
+  
+2. Once your account is setup you will want to create a repository. To do this, go to the homepage of github and look at the left side of your screen. If this is your first repository, click on the green box titled "Create Repository". If this is not your first repository, the green box should be titled "new". 
+  
+3. After the green box is clicked, multiple options will appear before the repository is created. Bellow are some options that are recommended:
+    + Ensure that the name is something meaningful and insightful
+    + Add a description that describes the purpose of the repository
+    + Add a README file
+    + Set the License to MIT
+    
+    Once this is done, click the create repository box  
+    
+4. From here, the repository page should be showing. If not, go back to the github home page and look in the left column. Click on your repository you just created.
