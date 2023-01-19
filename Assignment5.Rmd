@@ -1,0 +1,53 @@
+---
+title: "Assignment 5"
+author: "Josh Mondzelewski"
+date: "2023-01-19"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+2. Question 2  
+
+```{r}
+my_matrix <- matrix(runif(16), 4)
+
+my_num <- c(runif(100))
+my_logical <- c(my_num>0.5)
+
+my_letters <- sample(letters)
+
+my_list <- list(my_matrix[2,2], my_logical[2], my_letters[2])
+
+typeof(my_list[[1]])
+
+typeof(my_list[[2]])
+
+typeof(my_list[[3]])
+
+my_vec <- c(my_list[[1]], my_list[[2]], my_list[[3]])
+typeof(my_vec)
+```
+
+3. Question 3
+
+```{r}
+my_unif <- rep(NA, each = 26)
+my_letters <- rep(NA, each = 26)
+dFrame <- data.frame(my_unif, my_letters, stringsAsFactors = FALSE)
+
+dFrame[,1] <- runif(26, min = 0, max = 10)
+dFrame[,2] <- sample(LETTERS)
+
+
+dFrame[sample(nrow(dFrame), 4),1] <- NA
+which(is.na(dFrame))
+
+dFrame[order(dFrame$my_letters),]
+
+mean(dFrame[,1], na.rm = TRUE)
+
+colnames(dFrame)[2] <- "my_LETTERS"
+dFrame[order(dFrame$my_LETTERS),]
+```
+

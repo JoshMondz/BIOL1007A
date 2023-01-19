@@ -12,9 +12,9 @@
 
 <meta name="author" content="Josh Mondzelewski" />
 
-<meta name="date" content="2023-01-12" />
+<meta name="date" content="2023-01-19" />
 
-<title>Assignment 3</title>
+<title>Assignment 5</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -148,68 +148,108 @@ code span.ot { color: #007020; }
 
 
 <section class="page-header">
-<h1 class="title toc-ignore project-name">Assignment 3</h1>
+<h1 class="title toc-ignore project-name">Assignment 5</h1>
 <h4 class="author project-author">Josh Mondzelewski</h4>
-<h4 class="date project-date">2023-01-12</h4>
+<h4 class="date project-date">2023-01-19</h4>
 </section>
 
 
 
 <section class="main-content">
-<ol style="list-style-type: decimal">
-<li></li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">1.1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">2.2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">3.3</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x<span class="sc">^</span>(a<span class="sc">^</span>b)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>## [1] 3.61714</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (x<span class="sc">^</span>a)<span class="sc">^</span>b</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>## [1] 1.997611</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>(x)<span class="sc">^</span><span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>(x)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>## [1] 7.413</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li></li>
+<li>Question 2</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">8</span>),<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">7</span>, <span class="at">to =</span> <span class="dv">1</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>##  [1] 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="dv">4</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">5</span>))</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#rep(1:5,1:5) or rep(1:5, c(1,2,3,4,5))</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">1</span>), <span class="fu">rep</span>(<span class="dv">4</span>, <span class="dv">2</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#rep(5:1,1:5) or rep(seq(5,1), c(1,2,3,4,5))</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code></pre></div>
-<pre><code>##  [1] 5 4 4 3 3 3 2 2 2 2 1 1 1 1 1</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">16</span>), <span class="dv">4</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>my_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">runif</span>(<span class="dv">100</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>my_logical <span class="ot">&lt;-</span> <span class="fu">c</span>(my_num<span class="sc">&gt;</span><span class="fl">0.5</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> <span class="fu">sample</span>(letters)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(my_matrix[<span class="dv">2</span>,<span class="dv">2</span>], my_logical[<span class="dv">2</span>], my_letters[<span class="dv">2</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(my_list[[<span class="dv">1</span>]])</span></code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(my_list[[<span class="dv">2</span>]])</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(my_list[[<span class="dv">3</span>]])</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(my_list[[<span class="dv">1</span>]], my_list[[<span class="dv">2</span>]], my_list[[<span class="dv">3</span>]])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(my_vec)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li></li>
+<li>Question 3</li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sheep&quot;</span>, <span class="st">&quot;fox&quot;</span>, <span class="st">&quot;owl&quot;</span>, <span class="st">&quot;ant&quot;</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> <span class="fu">c</span>(queue[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="st">&quot;serpent&quot;</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#queue[5] &lt;- &quot;serpent&quot;</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(queue)</span></code></pre></div>
-<pre><code>## [1] &quot;sheep&quot;   &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> queue[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#queue &lt;- queue[-1]</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(queue)</span></code></pre></div>
-<pre><code>## [1] &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;donkey&quot;</span>, queue[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(queue)</span></code></pre></div>
-<pre><code>## [1] &quot;donkey&quot;  &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> queue[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(queue)</span></code></pre></div>
-<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;owl&quot;    &quot;ant&quot;</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>queue <span class="ot">&lt;-</span> <span class="fu">append</span>(queue, <span class="st">&quot;aphid&quot;</span>, <span class="at">after =</span> <span class="dv">3</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(queue)</span></code></pre></div>
-<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;owl&quot;    &quot;aphid&quot;  &quot;ant&quot;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">which</span>(queue <span class="sc">==</span> <span class="st">&quot;aphid&quot;</span>))</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_unif <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="at">each =</span> <span class="dv">26</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="at">each =</span> <span class="dv">26</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(my_unif, my_letters, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dFrame[,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">26</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>dFrame[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>dFrame[<span class="fu">sample</span>(<span class="fu">nrow</span>(dFrame), <span class="dv">4</span>),<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(dFrame))</span></code></pre></div>
+<pre><code>## [1] 11 12 20 23</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dFrame[<span class="fu">order</span>(dFrame<span class="sc">$</span>my_letters),]</span></code></pre></div>
+<pre><code>##     my_unif my_letters
+## 23       NA          A
+## 14 3.360031          B
+## 21 4.897214          C
+## 19 8.402105          D
+## 9  0.571917          E
+## 8  3.032699          F
+## 2  9.142435          G
+## 4  0.340102          H
+## 26 8.021956          I
+## 11       NA          J
+## 12       NA          K
+## 1  3.293910          L
+## 10 3.576620          M
+## 22 1.165242          N
+## 24 2.417564          O
+## 16 5.419674          P
+## 15 1.554030          Q
+## 13 3.696439          R
+## 25 2.379809          S
+## 18 8.968804          T
+## 20       NA          U
+## 17 5.476868          V
+## 5  6.680212          W
+## 6  1.324641          X
+## 7  4.144739          Y
+## 3  2.554700          Z</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dFrame[,<span class="dv">1</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 4.110078</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dFrame)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;my_LETTERS&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dFrame[<span class="fu">order</span>(dFrame<span class="sc">$</span>my_LETTERS),]</span></code></pre></div>
+<pre><code>##     my_unif my_LETTERS
+## 23       NA          A
+## 14 3.360031          B
+## 21 4.897214          C
+## 19 8.402105          D
+## 9  0.571917          E
+## 8  3.032699          F
+## 2  9.142435          G
+## 4  0.340102          H
+## 26 8.021956          I
+## 11       NA          J
+## 12       NA          K
+## 1  3.293910          L
+## 10 3.576620          M
+## 22 1.165242          N
+## 24 2.417564          O
+## 16 5.419674          P
+## 15 1.554030          Q
+## 13 3.696439          R
+## 25 2.379809          S
+## 18 8.968804          T
+## 20       NA          U
+## 17 5.476868          V
+## 5  6.680212          W
+## 6  1.324641          X
+## 7  4.144739          Y
+## 3  2.554700          Z</code></pre>
 </section>
 
 
