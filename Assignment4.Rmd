@@ -11,12 +11,14 @@ output:
 
 ```{r}
 n_dims<- floor(runif(1,3,10))
+#sample(3:10,1)
 
 vec<- c(1:n_dims^2)
+#seq(1:n_dims^2)
 
-sample(vec)
+randVec <- sample(vec)
 
-m <- matrix(vec, n_dims, n_dims)
+m <- matrix(randVec, n_dims, n_dims)
 print(m)
 
 m2 <- m

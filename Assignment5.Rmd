@@ -14,6 +14,7 @@ my_matrix <- matrix(runif(16), 4)
 
 my_num <- c(runif(100))
 my_logical <- c(my_num>0.5)
+# as.logical(sample(0:1, 100, replace = T))
 
 my_letters <- sample(letters)
 
