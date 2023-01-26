@@ -27,6 +27,8 @@ Hello and welcome to my homepage! My name is Josh Mondzelewski and I am a curren
 
 [Assignment 7](Assignment7.html)
 
+[Assignment 8](Assignment8.html)
+
 # **Weekly Assignments**
 
 [Weekly Assignment 1](WeeklyAssignment1.html)

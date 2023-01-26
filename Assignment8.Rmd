@@ -1,0 +1,11 @@
+---
+title: "Assignment 8"
+author: "Josh Mondzelewski"
+date: "2023-01-26"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+1. Question 1
+
