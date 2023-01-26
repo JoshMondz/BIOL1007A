@@ -11,12 +11,21 @@ output:
 # Question 1
 myDframe <- function(mean1 = 10, mean2 = 45){
   DFrame <- data.frame(Type = rep(NA, 50), Value = rep(NA, 50))
+  # I was thin king of creating a dataframe first, then editing the values in it
   DFrame[1:25,1] <- "Control"
   DFrame[26:50,1] <- "Treatment"
   DFrame[1:25,2] <- rnorm(n = 25, mean = mean1, sd = 1.5)
   DFrame[26:50,2] <- rnorm(n = 25, mean = mean2, sd = 2)
   return(DFrame)
 }
+# simData <- function(mean1=10, sd1=1.5, mean2=45, sd2=2, n=25){
+#   
+#   Type <- rep(c("Control", "Treatment"), each = n)
+#   Value <- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n, mean = mean2, sd = sd2))
+#   dframe <- data.frame(Type, Value)
+#   return(dframe)
+# }
+# ^ A more efficient function
 
 # Question 2
 Df <- myDframe()
@@ -29,7 +38,11 @@ summary(analysis)
 # Question 4
 pVal <- function(DFrame = NULL){
   anova <- aov(as.formula(paste(names(DFrame)[2], "~", names(DFrame)[1])), data = DFrame)
-  return(summary(anova)[[1]][[1,"Pr(>F)"]])
+  # I looked up the aov function above but I am able to understand it. the paste
+  # function concatenates the strings together to make it in a format similar to 
+  # this: "y ~ x" as a string. The as.formula then turns that string into a read
+  # -able formula
+  return(summary(anova)[[1]][["Pr(>F)"]][1])
 }
 ```
 

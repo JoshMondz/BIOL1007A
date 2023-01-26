@@ -159,36 +159,49 @@ code span.ot { color: #007020; }
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>myDframe <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">mean1 =</span> <span class="dv">10</span>, <span class="at">mean2 =</span> <span class="dv">45</span>){</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  DFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Type =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">50</span>), <span class="at">Value =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">50</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Control&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">26</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Treatment&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">25</span>, <span class="at">mean =</span> mean1, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">26</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">25</span>, <span class="at">mean =</span> mean2, <span class="at">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(DFrame)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Df <span class="ot">&lt;-</span> <span class="fu">myDframe</span>()</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Df)</span></code></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I was thin king of creating a dataframe first, then editing the values in it</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Control&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">26</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Treatment&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">25</span>, <span class="at">mean =</span> mean1, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  DFrame[<span class="dv">26</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">25</span>, <span class="at">mean =</span> mean2, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(DFrame)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># simData &lt;- function(mean1=10, sd1=1.5, mean2=45, sd2=2, n=25){</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   Type &lt;- rep(c(&quot;Control&quot;, &quot;Treatment&quot;), each = n)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   Value &lt;- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n, mean = mean2, sd = sd2))</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   dframe &lt;- data.frame(Type, Value)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   return(dframe)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ^ A more efficient function</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Df <span class="ot">&lt;-</span> <span class="fu">myDframe</span>()</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Df)</span></code></pre></div>
 <pre><code>##      Type     Value
-## 1 Control 10.674527
-## 2 Control  9.129048
-## 3 Control  9.986526
-## 4 Control 10.591504
-## 5 Control 10.007015
-## 6 Control  8.925520</code></pre>
+## 1 Control  9.886677
+## 2 Control 11.579646
+## 3 Control  9.264617
+## 4 Control  9.014161
+## 5 Control  9.110013
+## 6 Control 10.164372</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data =</span> Df)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(analysis)</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
-## Type         1  14648   14648    4895 &lt;2e-16 ***
-## Residuals   48    144       3                   
+## Type         1  15860   15860    6958 &lt;2e-16 ***
+## Residuals   48    109       2                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 4</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pVal <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">DFrame =</span> <span class="cn">NULL</span>){</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">as.formula</span>(<span class="fu">paste</span>(<span class="fu">names</span>(DFrame)[<span class="dv">2</span>], <span class="st">&quot;~&quot;</span>, <span class="fu">names</span>(DFrame)[<span class="dv">1</span>])), <span class="at">data =</span> DFrame)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">summary</span>(anova)[[<span class="dv">1</span>]][[<span class="dv">1</span>,<span class="st">&quot;Pr(&gt;F)&quot;</span>]])</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I looked up the aov function above but I am able to understand it. the paste</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function concatenates the strings together to make it in a format similar to </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this: &quot;y ~ x&quot; as a string. The as.formula then turns that string into a read</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -able formula</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">summary</span>(anova)[[<span class="dv">1</span>]][[<span class="st">&quot;Pr(&gt;F)&quot;</span>]][<span class="dv">1</span>])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 
 

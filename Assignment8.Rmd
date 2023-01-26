@@ -7,5 +7,64 @@ output:
     theme: cayman
     highlight: github
 ---
-1. Question 1
+Question 1
+
+* I am able to run my function with new means because I had the two means specified as arguments in the function.
+
+* In Assignment 6, there were few differences in my code and the posted solutions. One big difference was that I did not use th %in% operator in my filter function which would have been useful in combining both the species names. The other was that I did not arrange my irisFinal by Sepal.Area in the final summary.
+
+* In the weekly assignment, I had a few changes from the answers. In the main data frame function, mine was very inefficient in that while I was able to set it so that custom means can be input, the size and sd are unable to be changes. Also, the code is a bit inefficient in that it has to create an empty data frame first then fill the values rather than just filling the values. As for the pVal function, I was stumped becasue I though that we needed the function to work for any dataframe with two columns regardless of the column names. I looked up the solution to this and it was a very elegant one that I explained in the code. Also, my return function was not as elegant as the answer key's one.
+
+Question 2
+
+```{r}
+## Set up libraries
+library(tidyverse)
+library(ggthemes)
+
+
+# Data obtained from Veysey Powell and Babbitt 2016: An experimental test of buffer utility as a technique for managing pool-breeding amphibians https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.547rp
+
+dryadData <- read.table("Data/veysey-babbit_data_amphibians.csv", header=TRUE, sep=",", stringsAsFactors = TRUE)
+
+# glimpse(dryadData)
+# head(dryadData)
+# table(dryadData$species)
+
+dryadData$species<-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating 'labels' to use for the plot
+
+#class(dryadData$treatment)
+dryadData$treatment <- factor(dryadData$treatment, 
+            levels=c("Reference",
+                     "100m", "30m"))
+
+
+p<- ggplot(data=dryadData, 
+       aes(x=interaction(wetland, treatment), #The combined variable of both the
+           #wetland number and treatment number
+           y=count.total.adults, #column used to count total adults
+           fill=factor(year))) + #fills in the multiple bars by year
+ geom_bar(position="dodge", stat="identity", color="black") + #Creates a black
+  #outline bar graph with a dodge position and identity stat
+  ylab("Number of breeding adults") + #The overall y lable
+  xlab("") +
+  scale_y_continuous(breaks = c(0,100,200,300,400,500)) + #Creates the y-axis scale
+  scale_x_discrete(labels=c("30 (Ref)", "124 (Ref)", "141 (Ref)", "25 (100m)","39 (100m)","55 (100m)","129 (100m)", "7 (30m)","19 (30m)","20 (30m)","59 (30m)")) + #labels all of the x-axis data
+  facet_wrap(~species, nrow=2, strip.position="right") + #creates the individual
+  #graph lables, has them labled as species, and puts it on the right of the graph.
+  #n rows specifies the number of rows for the graph
+  theme_few() + #the theme
+  scale_fill_grey() + #fills in the bar with greyscale
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + #panel.backround
+  #represents the backround. element_rect allows for a color for the border and
+  #backrounds with the backround being gray and color being black. legend position
+  #indicates the legend's position, this one is on top. the lengend title is
+  #element_blank() which means that there is nothing there and has no space.
+  #axis.title.y changes the overall y axis title. element_text allow for the text to
+  #be modified. strip.text changes the text of the y axis of the individual graphs.
+  guides(fill=guide_legend(nrow=1,byrow=TRUE)) #maps the fill colors onto the values
+#in the legend
+
+p
+```
 

@@ -15,6 +15,7 @@ glimpse(iris)
 
 #Question 2
 iris1 <- filter(iris, Species == "virginica" | Species == 'versicolor', Sepal.Length > 6 & Sepal.Width > 2.5 )
+# The %in% operator would have also been useful here to combine the species
 # There are 56 observations and 5 variables
 
 #Question 3
