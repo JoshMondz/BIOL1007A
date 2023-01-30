@@ -1,0 +1,63 @@
+---
+title: "Assignment 9"
+author: "Josh Mondzelewski"
+date: "2023-01-30"
+output: html_document
+---
+```{r}
+# Question 1
+testVec <- c(0,1,1,2,4,5,0,2,3,0,2,1,2,0,1) #Should return 4
+numZero <- function(vec = NULL){
+  count <- 0
+  for(i in 1:length(vec)){
+    if(vec[i] == 0) {
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+print(numZero(testVec))
+
+# Questions 2
+
+rowColProd <- function(numRow = NULL, numCol = NULL){
+  m = matrix(rep(0, each = numRow * numCol), nrow = numRow, ncol = numCol)
+  for(i in 1:nrow(m)){
+    for(j in 1:ncol(m)){
+      m[i,j] <- i * j
+    }
+  }
+  return(m)
+}
+print(rowColProd(4,6))
+
+# Question 3
+
+myDframe <- function(mean1 = 10, mean2 = 45){
+  DFrame <- data.frame(Type = rep(NA, 50), Value = rep(NA, 50))
+  # I was thin king of creating a dataframe first, then editing the values in it
+  DFrame[1:25,1] <- "Control"
+  DFrame[26:50,1] <- "Treatment"
+  DFrame[1:25,2] <- rnorm(n = 25, mean = mean1, sd = 1.5)
+  DFrame[26:50,2] <- rnorm(n = 25, mean = mean2, sd = 2)
+  return(DFrame)
+  
+  
+}
+
+pVal <- function(DFrame = NULL){
+  anova <- aov(as.formula(paste(names(DFrame)[2], "~", names(DFrame)[1])), data = DFrame)
+  # I looked up the aov function above but I am able to understand it. the paste
+  # function concatenates the strings together to make it in a format similar to 
+  # this: "y ~ x" as a string. The as.formula then turns that string into a read
+  # -able formula
+  return(summary(anova)[[1]][["Pr(>F)"]][1])
+}
+dFrame <-data.frame(pval = rep(NA, each = 100), repNum = rep(NA, each = 100))
+for (i in 1:100){
+  dFrame[i,1] <- pVal(myDframe())
+  dFrame[i,2] <- i
+}
+print(dFrame)
+```
+
