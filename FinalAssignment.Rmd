@@ -1,0 +1,40 @@
+---
+title: "Final Assignment"
+author: "Josh Mondzelewski"
+date: "2023-02-01"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+# **What Is It?**
+
+I chose to create a personal website for my final project. This website contains/will contain all the information relevant to me such as my socials links, resume, and any research if that is what I do in the future. Right now it is pretty empty but I hope to fill it up more in the coming years. I chose to make a website because I was interested in the process of making one and I though that this would be a useful skill if I was to persue a career in a stem field.
+
+You can acess my website [here](https://joshmondz.github.io)
+
+# **How to Make a Website**
+
+1. To begin you are going to want to create a new GitHub repository. This can be done my clicking the green "new" box on the [GitHub Homepage](https://github.com). Name this repository <GitHub Username>.github.io where <GitHub Username> is your github username. Make sure to add a license and a brief description.
+
+2. Copy and paste the following code to your terminal to clone your repository to your computer.
+
+```
+git clone https://github.com/username/username.github.io
+```
+ + (username is your GitHub username)
+ 
+3. Now you want to select your website theme. You can find tons of free options all over the internet but a helpful website for finding themes is [Jekyll](https://jekyllthemes.io). On Jekyll you can browse themes that cost money as well as free themes. Once you find a theme that you like, make sure it has a link to a github repository. If it does, make sure that repository is well documented (you will save yourself a lot of pain by doing this).
+
+4. Once you have a theme, go over to that theme's repository and click the green "<> code" box and download the zip file.
+
+5. Unzip the file and copy and paste its contents into your repository file (it should be titled username.github.io)
+
+6. Using the terminal, add, commit, and push the changes. Here is where I had trouble. If you are having trouble as well, one easy solution is to make a new RStudio project with the title being username.github.io and the link being a copy and pasted link from the green "<> code" box from your repository. From here you can re-copy and paste the contents of the zip file into the project folder and add, commit, and push through RStudio's terminal.
+
+7. Go to your GitHub repository page and click on settings/pages. Select the box titled "None" and switch it to "Main". Now your website should be up and you can access it by typing username.github.io into your url.
+
+8. Making changes to your website will be different depending on the theme you selected so I recommend you take your time to research the files in your repository. Some good places to start are the README file and _config.yml. From here just follow along with the authors instructions on how to change the website. This will require a lot of trial and error but eventually your website will be shaped to how you want it to look.
+
+
+

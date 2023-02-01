@@ -1,0 +1,34 @@
+---
+title: "Weekly Assignment 4"
+author: "Josh Mondzelewski"
+date: "2023-01-31"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+```{r}
+
+library("tidyverse")
+library("ggthemes")
+library("dplyr")
+wolfData <- read.table(file = "Data/RW_Dataset.csv", header = TRUE, sep = ",")
+
+#Cleaning the data to get the years and the wolf deaths per year
+cleanWolfData <- wolfData %>%
+  filter(fate != "agency_removal", fate != "fu") %>%
+  group_by(Year) %>%
+  summarise(numDeaths = n()) 
+
+#Linear model because both variables are continuous
+wolfModel <- lm(numDeaths ~ Year, data = cleanWolfData)
+summary(wolfModel)
+
+#Creating a linear regression model on the data
+p <- ggplot(data = cleanWolfData, aes(x = Year, y = numDeaths)) +
+  geom_point(size = 1) +
+  stat_smooth(method = "lm")
+p + theme_minimal()
+
+```
+
