@@ -36,5 +36,24 @@ git clone https://github.com/username/username.github.io
 
 8. Making changes to your website will be different depending on the theme you selected so I recommend you take your time to research the files in your repository. Some good places to start are the README file and _config.yml. From here just follow along with the authors instructions on how to change the website. This will require a lot of trial and error but eventually your website will be shaped to how you want it to look.
 
+# **If you choose Beautiful Jekyll or any other Jekyll Theme...**
+
+This section is for if you chose a Jekyll theme. My theme that I chose was Beautiful Jekyll and so this next section will be based on that; however, tips from this section should be useful for all Jekyll themes.
+
+* There are some key files and folders in the repository. Here are a few...
+  + _posts - The folder in which the blog post md files will go. If the files are written in a year-month-day-title.md format (ex. 2023-02-01-test.md), Jekyll will automatically recognize it as a blog post and input the correct date.
+  
+  + assets - this folder is for any asset you need to access such as images or css files. If this folder does not exist, it is recommended you make one.
+  
+  + _config.yml - this .yml file allows for you to edit most options on the website theme. The author should have it well documented. If not, trial and error might be the best course of operation as to figuring out what each line of code does.
+  
+  + index.html - This is the "homepage" of your website. Here is where you should be able to edit the title, subtite, etc. of your front page.
+  
+* For a Jekyll webpage to show correctly, the header must be specific. Two lines of three dashes indicate a Jekyll format. In between these dashes is where you can put parameters such as title, subtitle, image paths, etc. Look at your authors readme file for a list of available parameters that Jekyll will accept.
+  
+* Images may be a bit tricky. Make sure there is a "/" starting your pathing. And make sure your images go to some sort of asset folder to keep track of them all.
+
+* Some symbols in markdown are not picked up by Jekyll. For instance a "*" used as a bullet point will not be recognized by Jekyll but rather a "-". This is more trial and error and if at any point one of your webpages end up in a basic html font, its most likely that you used a symbol not recognized by Jekyll.
+
 
 
